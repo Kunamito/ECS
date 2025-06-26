@@ -1,0 +1,18 @@
+# Vscode
+.vscode/
+
+# Valgrind
+vgcore.*
+
+# Cmake
+build/
+
+# Files Created
+ECS
+
+# Doc
+latex/
+html/
+
+# Local Tests
+*_test*
