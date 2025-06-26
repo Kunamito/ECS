@@ -33,9 +33,7 @@ class SparseArray {
         SparseArray(SparseArray&& spa) noexcept {
             _data = spa._data.move();
         }
-        ~SparseArray() {
-
-        }
+        ~SparseArray() = default;
 
         SparseArray& operator=(SparseArray const & spa) {
             return spa._data.copy();
