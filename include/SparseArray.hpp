@@ -38,10 +38,10 @@ class SparseArray {
         }
 
         SparseArray& operator=(SparseArray const & spa) {
-            return _data.copy();
+            return spa._data.copy();
         }
         SparseArray& operator=(SparseArray && spa) noexcept {
-            return _data.move();
+            return spa._data.move();
         }
         reference_type operator[](size_t idx) {
             return _data[idx];
