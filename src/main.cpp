@@ -5,7 +5,7 @@
 ** main.cpp
 */
 
-#include "SparseArray.hpp"
+#include "Registry.hpp"
 #include "projectTools.hpp"
 
 int main(int, const char **)
