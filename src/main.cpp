@@ -5,6 +5,7 @@
 ** main.cpp
 */
 
+#include "SparseArray.hpp"
 #include "projectTools.hpp"
 
 int main(int, const char **)
