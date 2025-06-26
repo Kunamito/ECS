@@ -10,6 +10,10 @@
     
     #include <cuchar>
 
+namespace ECS {
+
 typedef size_t Entity;
+
+} // namespace ECS
 
 #endif

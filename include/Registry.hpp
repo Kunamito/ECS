@@ -17,6 +17,8 @@
     #include "SparseArray.hpp"
     #include "Entity.hpp"
 
+namespace ECS {
+
 class Registry {
     public:
         template <typename Component>
@@ -35,10 +37,7 @@ class Registry {
             return _component_array.at(std::type_index(typeid(Component)));
         }
 
-        void killEntity(const Entity& e) {
-            for (auto& rm : _remover)
-                rm(*this, e);
-        }
+        void killEntity(const Entity& e);
 
         template <typename Component>
         typename SparseArray<Component>::reference_type addComponent(const Entity& e, Component&& c) {
@@ -60,5 +59,6 @@ class Registry {
         std::vector<std::function<void(Registry&, const Entity&)>> _remover;
 };
 
+} // namespace ECS
 
 #endif

@@ -11,6 +11,8 @@
     #include <optional>
     #include <vector>
 
+namespace ECS {
+
 template<typename Component>
 class SparseArray {
     public :
@@ -90,5 +92,7 @@ class SparseArray {
     private:
         container_t _data;
 };
+
+} // namespace ECS
 
 #endif

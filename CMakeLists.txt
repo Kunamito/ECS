@@ -2,18 +2,19 @@ cmake_minimum_required(VERSION 3.10)
 project(ECS)
 
 ########## SETUP ##########
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR})
+set(CMAKE_STATIC_LIBRARY_PREFIX "")
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR})
 set(SRC_DIR "${PROJECT_SOURCE_DIR}/src/")
 set(HDR_DIR "${PROJECT_SOURCE_DIR}/include/")
 
-########## BINARY ##########
-add_executable( ${PROJECT_NAME}
-    ${SRC_DIR}main.cpp
+########## LIB ##########
+add_library( ${PROJECT_NAME} STATIC
+    ${SRC_DIR}Registry.cpp
 )
 
-########## LINKAGE ##########
-target_include_directories( ${PROJECT_NAME}
-    PRIVATE
+target_include_directories(${PROJECT_NAME}
+    PUBLIC
         ${HDR_DIR}
 )
