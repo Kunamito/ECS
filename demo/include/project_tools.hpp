@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2025
 ** ECS
 ** File description:
-** project_tool.hpp
+** project_tools.hpp
 */
 
 #ifndef TOOLS_HPP_

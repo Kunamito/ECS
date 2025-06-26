@@ -8,6 +8,7 @@ vgcore.*
 build/
 
 # Files Created
+demo/demo
 ECS.a
 
 # Doc
