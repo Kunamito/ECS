@@ -10,8 +10,6 @@ set(DEMO_HDR_DIR "${PROJECT_SOURCE_DIR}/include/")
 include_directories("../include")
 link_directories("../")
 
-find_package(SFML 2.6.1 COMPONENTS graphics window system REQUIRED)
-
 ########## BINARY ##########
 add_executable( ${PROJECT_NAME}
     ${DEMO_SRC_DIR}main.cpp
@@ -20,10 +18,7 @@ add_executable( ${PROJECT_NAME}
 ########## LINKAGE ##########
 target_link_libraries( ${PROJECT_NAME}
     PRIVATE
-        sfml-graphics
-        sfml-window
-        sfml-system
-        ECS.a
+        registry
 )
 
 target_include_directories( ${PROJECT_NAME}
