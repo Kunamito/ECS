@@ -9,7 +9,8 @@ build/
 
 # Files Created
 demo/demo
-libregistry.a
+libECS.a
+libsparray.a
 
 # Doc
 latex/

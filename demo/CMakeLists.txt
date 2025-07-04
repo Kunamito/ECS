@@ -10,15 +10,18 @@ set(DEMO_HDR_DIR "${PROJECT_SOURCE_DIR}/include/")
 include_directories("../include")
 link_directories("../")
 
+include_directories("../SparseArray/include")
+link_directories("../SparseArray/")
+
 ########## BINARY ##########
 add_executable( ${PROJECT_NAME}
     ${DEMO_SRC_DIR}main.cpp
 )
 
 ########## LINKAGE ##########
-target_link_libraries( ${PROJECT_NAME}
-    PRIVATE
-        registry
+target_link_libraries(${PROJECT_NAME}
+    sparray.a
+    ECS.a
 )
 
 target_include_directories( ${PROJECT_NAME}
