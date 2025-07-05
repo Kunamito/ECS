@@ -113,22 +113,22 @@ class Vector3 {
     using Vector3d = Vector3<double>;
     using Vector38b = Vector3<u_int8_t>;
 
-std::ostream& operator<<(std::ostream& os, const Vector3f& vector)
+inline std::ostream& operator<<(std::ostream& os, const Vector3f& vector)
 {
     return os << vector.x << " " << vector.y << " " << vector.z;
 }
 
-std::ostream& operator<<(std::ostream& os, const Vector3u& vector)
+inline std::ostream& operator<<(std::ostream& os, const Vector3u& vector)
 {
     return os << vector.x << " " << vector.y << " " << vector.z;
 }
 
-std::ostream& operator<<(std::ostream& os, const Vector3d& vector)
+inline std::ostream& operator<<(std::ostream& os, const Vector3d& vector)
 {
     return os << vector.x << " " << vector.y << " " << vector.z;
 }
 
-std::ostream& operator<<(std::ostream& os, const Vector38b& vector)
+inline std::ostream& operator<<(std::ostream& os, const Vector38b& vector)
 {
     return os << vector.x << " " << vector.y << " " << vector.z;
 }
