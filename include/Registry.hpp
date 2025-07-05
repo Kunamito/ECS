@@ -8,14 +8,12 @@
 #ifndef REGISTRY_HPP_
     #define REGISTRY_HPP_
 
-    #include <iostream> // test purpose (to delete)
-
     #include <unordered_map>
     #include <typeindex>
     #include <functional>
     #include <any>
 
-    #include "SparseArray.hpp"
+    #include "tools/SparseArray.hpp"
     #include "Entity.hpp"
 
 namespace ECS {

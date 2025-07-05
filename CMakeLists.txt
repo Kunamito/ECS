@@ -4,24 +4,16 @@ project(ECS)
 ########## SETUP ##########
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++23")
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR})
-set(REG_SRC_DIR "${PROJECT_SOURCE_DIR}/src/")
-set(REG_HDR_DIR "${PROJECT_SOURCE_DIR}/include/")
-
-########## LIBS ##########
-add_subdirectory(SparseArray)
-add_subdirectory(maths)
+set(ECS_SRC_DIR "${PROJECT_SOURCE_DIR}/src/")
+set(ECS_HDR_DIR "${PROJECT_SOURCE_DIR}/include/")
 
 ########## ECS ##########
 add_library( ${PROJECT_NAME} STATIC
-    ${REG_SRC_DIR}Registry.cpp
-)
-
-target_link_libraries( ${PROJECT_NAME}
-    PRIVATE
-        sparray
+    ${ECS_SRC_DIR}Registry.cpp
+    ${ECS_SRC_DIR}components/position.cpp
 )
 
 target_include_directories(${PROJECT_NAME}
     PUBLIC
-        ${REG_HDR_DIR}
+        ${ECS_HDR_DIR}
 )

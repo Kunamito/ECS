@@ -5,6 +5,8 @@
 ** main.cpp
 */
 
+#include <iostream> // test purspose (to delete)
+
 #include "components/position.hpp"
 #include "components/drawable.hpp"
 #include "components/controlable.hpp"
@@ -29,9 +31,10 @@ int main(int, const char **)
     ECS::Entity e2(1);
 
     loadRegistry(reg);
-    reg.addComponent<Position>(e1, Position(14.1, 4.3));
-    reg.addComponent<Position>(e2, Position(14.1, 4.324234));
+    reg.addComponent<Position>(e1, Position(Vector2d(2.1, 4.3)));
+    reg.addComponent<Velocity>(e2, Velocity(3));
     std::cout << reg.get_components<Position>()[e1].value_or(Position(0, 0)).x << std::endl;
     std::cout << reg.get_components<Position>()[e2].value_or(Position(0, 0)).y << std::endl;
+    std::cout << reg.get_components<Velocity>()[e2].value_or(0) << std::endl;
     return EXIT_SUCCESS;
 }
