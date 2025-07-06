@@ -8,19 +8,20 @@
 #ifndef POSITION_HPP_
     #define POSITION_HPP_
 
-    #include "tools/Vector3.hpp"
-    #include "tools/Vector2.hpp"
+    #include <iostream>
+    #include <SFML/System/Vector2.hpp>
+    #include <SFML/System/Vector3.hpp>
 
-struct Position {
-    Position() = default;
-    Position(double value_x, double value_y, double value_z);
-    Position(const Vector3d&);
-    Position(double value_x, double value_y);
-    Position(const Vector2d&);
+struct Position2 : public sf::Vector2f {
+    Position2() = default;
+    Position2(float value_x, float value_y);
+    Position2(const sf::Vector2f&);
+};
 
-    double x;
-    double y;
-    double z;
+struct Position3 : public sf::Vector3f {
+    Position3() = default;
+    Position3(float value_x, float value_y, float value_z);
+    Position3(const sf::Vector3f&);
 };
 
 #endif 

@@ -5,8 +5,8 @@
 ** Vector3.hpp
 */
 
-#ifndef VECTOR2_3_HPP_
-    #define VECTOR_3_HPP_
+#ifndef VECTOR3_HPP_
+    #define VECTOR3_HPP_
 
     #include <cmath>
     #include <concepts>

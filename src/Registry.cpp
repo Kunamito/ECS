@@ -15,5 +15,11 @@ void Registry::killEntity(const Entity& e)
         rm(*this, e);
 }
 
+void Registry::runSystems(void)
+{
+    for (const auto& sys : _systems)
+        sys(*this);
+}
+
 } // namespace ECS
 
