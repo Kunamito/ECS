@@ -17,6 +17,17 @@ link_directories("../")
 ########## BINARY ##########
 add_executable( ${PROJECT_NAME}
     ${DEMO_SRC_DIR}main.cpp
+
+    # components
+    ${DEMO_SRC_DIR}components/position.cpp
+    ${DEMO_SRC_DIR}components/velocity.cpp
+    ${DEMO_SRC_DIR}components/drawable.cpp
+    ${DEMO_SRC_DIR}components/sprite.cpp
+
+    # systems
+    ${DEMO_SRC_DIR}systems/movement.cpp
+    ${DEMO_SRC_DIR}systems/draw.cpp
+    ${DEMO_SRC_DIR}systems/controle.cpp
 )
 
 ########## LINKAGE ##########

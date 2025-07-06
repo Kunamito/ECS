@@ -13,7 +13,7 @@
     #include <functional>
     #include <any>
 
-    #include "tools/SparseArray.hpp"
+    #include "SparseArray.hpp"
     #include "Entity.hpp"
 
 namespace ECS {
