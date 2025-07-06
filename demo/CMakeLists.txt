@@ -7,6 +7,10 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR})
 set(DEMO_SRC_DIR "${PROJECT_SOURCE_DIR}/src/")
 set(DEMO_HDR_DIR "${PROJECT_SOURCE_DIR}/include/")
 
+########## SFML ##########
+find_package(SFML 2.5.1 COMPONENTS graphics window system REQUIRED)
+
+########## ECS ##########
 include_directories("../include")
 link_directories("../")
 
@@ -22,5 +26,9 @@ target_include_directories( ${PROJECT_NAME}
 )
 
 target_link_libraries( ${PROJECT_NAME}
+    sfml-graphics
+    sfml-audio
+    sfml-window
+    sfml-system
     ECS.a
 )
