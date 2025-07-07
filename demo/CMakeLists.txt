@@ -28,6 +28,7 @@ add_executable( ${PROJECT_NAME}
     ${DEMO_SRC_DIR}systems/movement.cpp
     ${DEMO_SRC_DIR}systems/draw.cpp
     ${DEMO_SRC_DIR}systems/controle.cpp
+    ${DEMO_SRC_DIR}systems/gravity.cpp
 )
 
 ########## LINKAGE ##########
