@@ -13,6 +13,7 @@
 #include "components/controlable.hpp"
 #include "components/velocity.hpp"
 #include "components/drawable.hpp"
+#include "components/gravity.hpp"
 
 #include "systems/draw.hpp"
 #include "systems/movement.hpp"
@@ -29,6 +30,7 @@ static void loadRegistry(ECS::Registry& reg)
     (void)reg.registerComponent<Sprite>();
     (void)reg.registerComponent<Controlable>();
     (void)reg.registerComponent<Drawable>();
+    (void)reg.registerComponent<Gravity>();
 
     reg.addSystem(&draw_sys);
     reg.addSystem(&movement2_sys);
@@ -44,6 +46,7 @@ static void demoSetup(ECS::Registry& reg, sf::RenderWindow& window)
     (void)reg.addComponent<Sprite>(e1, Sprite("assets/test.png"));
     (void)reg.addComponent<Drawable>(e1, Drawable(window));
     (void)reg.addComponent<Velocity2>(e1, Velocity2(10.0f, 0.0f));
+    (void)reg.addComponent<Gravity>(e1, Gravity());
 
     (void)reg.addComponent<Position2>(e2, Position2(600.0f, 300.0f));
     (void)reg.addComponent<Sprite>(e2, Sprite("assets/test.png"));

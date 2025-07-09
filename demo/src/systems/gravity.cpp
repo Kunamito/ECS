@@ -9,14 +9,16 @@
 
 #include "components/position.hpp"
 #include "components/velocity.hpp"
+#include "components/gravity.hpp"
 
 void gravity_sys(ECS::Registry& reg)
 {
     auto& positions = reg.getComponents<Position2>();
     auto& velocities = reg.getComponents<Velocity2>();
+    auto& gravities = reg.getComponents<Gravity>();
 
     for (ECS::Entity e = 0; e < positions.size() && e < velocities.size(); ++e) {
-        if (positions[e].has_value() && velocities[e].has_value()) {
+        if (positions[e].has_value() && velocities[e].has_value() && gravities[e].has_value()) {
             auto& pos = positions[e].value();
             auto& vel = velocities[e].value();
 
