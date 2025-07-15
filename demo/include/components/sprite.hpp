@@ -12,7 +12,7 @@
     #include <SFML/Graphics/Texture.hpp>
     #include <SFML/Graphics/Sprite.hpp>
 
-struct Sprite : sf::Sprite {
+struct Sprite : public sf::Sprite {
     Sprite() = default;
     Sprite(const std::string&);
     Sprite(const Sprite&);

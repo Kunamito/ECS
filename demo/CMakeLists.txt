@@ -4,8 +4,8 @@ project(demo)
 ########## SETUP ##########
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++23")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR})
-set(DEMO_SRC_DIR "${PROJECT_SOURCE_DIR}/src/")
-set(DEMO_HDR_DIR "${PROJECT_SOURCE_DIR}/include/")
+set(SRC_DIR "${PROJECT_SOURCE_DIR}/src/")
+set(HDR_DIR "${PROJECT_SOURCE_DIR}/include/")
 
 ########## SFML ##########
 find_package(SFML 2.5.1 COMPONENTS graphics window system REQUIRED)
@@ -16,25 +16,30 @@ link_directories("../")
 
 ########## BINARY ##########
 add_executable( ${PROJECT_NAME}
-    ${DEMO_SRC_DIR}main.cpp
+    ${SRC_DIR}main.cpp
 
     # components
-    ${DEMO_SRC_DIR}components/position.cpp
-    ${DEMO_SRC_DIR}components/velocity.cpp
-    ${DEMO_SRC_DIR}components/drawable.cpp
-    ${DEMO_SRC_DIR}components/sprite.cpp
+    ${SRC_DIR}components/position.cpp
+    ${SRC_DIR}components/velocity.cpp
+    ${SRC_DIR}components/sprite.cpp
+    ${SRC_DIR}components/window.cpp
 
     # systems
-    ${DEMO_SRC_DIR}systems/movement.cpp
-    ${DEMO_SRC_DIR}systems/draw.cpp
-    ${DEMO_SRC_DIR}systems/controle.cpp
-    ${DEMO_SRC_DIR}systems/gravity.cpp
+    ${SRC_DIR}systems/display.cpp
+    ${SRC_DIR}systems/event.cpp
+    ${SRC_DIR}systems/movement.cpp
+    ${SRC_DIR}systems/draw.cpp
+    ${SRC_DIR}systems/controle.cpp
+    ${SRC_DIR}systems/gravity.cpp
+
+    # scenes
+    ${SRC_DIR}scenes/InGame.cpp
 )
 
 ########## LINKAGE ##########
 target_include_directories( ${PROJECT_NAME}
     PRIVATE
-        ${DEMO_HDR_DIR}
+        ${HDR_DIR}
 )
 
 target_link_libraries( ${PROJECT_NAME}

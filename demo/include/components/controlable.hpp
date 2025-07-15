@@ -8,6 +8,8 @@
 #ifndef CONTROLABLE_HPP_
     #define CONTROLABLE_HPP_
 
-struct Controlable {};
+struct Controlable {
+    unsigned controlable = 1;
+};
 
 #endif 

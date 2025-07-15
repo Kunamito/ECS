@@ -11,9 +11,9 @@
 
 void controle_sys(ECS::Registry& reg)
 {
-    auto& controlables = reg.getComponents<Controlable>();
+    // auto& controlables = reg.getComponents<Controlable>();
 
-    for (size_t e = 0; e < controlables.size(); ++e) {
+    // for (size_t e = 0; e < controlables.size(); ++e) {
         
-    }
+    // }
 }
