@@ -8,7 +8,6 @@
 #ifndef IN_GAME_SYS_HPP_
     #define IN_GAME_SYS_HPP_
 
-    #include "systems/controle.hpp"
     #include "systems/movement.hpp"
     #include "systems/event.hpp"
     #include "systems/draw.hpp"

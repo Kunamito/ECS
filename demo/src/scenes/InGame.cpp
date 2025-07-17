@@ -26,7 +26,6 @@ void InGame::setECS(void)
     _reg.registerComponent<Controlable>();
     _reg.registerComponent<Window>();
 
-    _reg.addSystem(&controle_sys);
     _reg.addSystem(&movement2_sys);
     _reg.addSystem(&manageEvent);
     _reg.addSystem(&draw_sys);
@@ -44,7 +43,7 @@ void InGame::setEntities(void)
 
 void InGame::run(void)
 {
-    while (_reg.getComponents<Window>()[MAIN_WINDOW].value().isOpen()) {
+    while (MAIN_WIN_EXIST && MAIN_WIN_ISOPEN) {
         _reg.runSystems();
     }
 }
