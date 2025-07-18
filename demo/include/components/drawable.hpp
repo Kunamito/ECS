@@ -5,8 +5,8 @@
 ** drawable.hpp
 */
 
-#ifndef DRAWABLE_HPP_
-    #define DRAWABLE_HPP_
+#ifndef DRAWABLE_CMPT_HPP_
+    #define DRAWABLE_CMPT_HPP_
 
 struct Drawable {
     unsigned drawable = 1;

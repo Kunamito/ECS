@@ -23,8 +23,8 @@ void InGame::setECS(void)
     _reg.registerComponent<Velocity2>();
     _reg.registerComponent<Sprite>();
     _reg.registerComponent<Drawable>();
-    _reg.registerComponent<Controlable>();
     _reg.registerComponent<Window>();
+    _reg.registerComponent<Player>();
 
     _reg.addSystem(&movement2_sys);
     _reg.addSystem(&manageEvent);
@@ -38,7 +38,8 @@ void InGame::setEntities(void)
     _reg.addComponent(PLAYER, Drawable());
     _reg.addComponent(PLAYER, Position2(100.0f, 100.0f));
     _reg.addComponent(PLAYER, Sprite(PLAYER_SPRITE_PATH));
-    _reg.addComponent(PLAYER, Velocity2(10.0f, 0.0f));
+    _reg.addComponent(PLAYER, Velocity2(0.0f, 0.0f));
+    _reg.addComponent(PLAYER, Player());
 }
 
 void InGame::run(void)
